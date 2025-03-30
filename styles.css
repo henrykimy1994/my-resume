@@ -550,6 +550,7 @@ main {
     margin-bottom: 25px;
     padding: 20px;
     background-color: var(--card-bg);
+    border: 1px solid rgb(230 230 230);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -593,6 +594,7 @@ main {
 
 .language-item {
     background-color: var(--card-bg);
+    border: 1px solid rgb(230 230 230);
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -849,78 +851,5 @@ footer {
     
     .languages-container {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-
-/* Print styles */
-@media print {
-    body {
-        background-color: white;
-    }
-    
-    .container {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .header {
-        padding: 30px;
-        margin-bottom: 30px;
-        border-radius: 0;
-        background: var(--primary-color) !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-    
-    main {
-        padding: 0 20px;
-        gap: 30px;
-    }
-    
-    .section {
-        margin-bottom: 20px;
-        page-break-inside: avoid;
-        box-shadow: none;
-        border: 1px solid var(--border-color);
-    }
-    
-    .download-container {
-        display: none;
-    }
-    
-    .profile-image::after, 
-    .header::before, 
-    .header::after {
-        display: none;
-    }
-    
-    .experience-item, 
-    .education-item, 
-    .project-item,
-    .certification-item,
-    .language-item,
-    .skill-item {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-    
-    .animate, .animate-in, .animate-fade, .animate-item {
-        opacity: 1 !important;
-        transform: none !important;
-        animation: none !important;
-    }
-    
-    .section {
-        opacity: 1 !important;
-        transform: none !important;
-        animation: none !important;
-    }
-    
-    .skill-level {
-        transition: none !important;
-        width: attr(data-level %) !important;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
     }
 }
