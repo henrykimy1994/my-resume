@@ -21,7 +21,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Gowun Dodum", sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.6;
@@ -35,6 +35,11 @@ body {
     padding: 0;
     background-color: transparent;
     overflow: visible;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Modern header styles */
@@ -344,6 +349,40 @@ main {
     font-weight: bold;
 }
 
+/* Job Skills Tags */
+.job-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+/* Job Skills Tags */
+.skill-tag {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 30px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.skill-tag::before {
+    content: '#';
+    margin-right: 2px;
+    font-weight: 700;
+}
+
 /* Skills section styles */
 .skills-container {
     display: grid;
@@ -447,6 +486,18 @@ main {
     border-radius: 10px;
     width: 0;
     transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Animation for skill tags */
+.skill-tag {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.skill-tag.animate-item {
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* Projects section styles */

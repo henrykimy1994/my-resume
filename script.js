@@ -95,6 +95,14 @@ function animateSectionContents(section) {
                     li.classList.add('animate-item');
                 }, 300 + (liIndex * 150));
             });
+
+            // Animate skill tags with a staggered delay
+            const skillTags = item.querySelectorAll('.skill-tag');
+            skillTags.forEach((tag, tagIndex) => {
+                setTimeout(() => {
+                    tag.classList.add('animate-item');
+                }, 500 + (tagIndex * 100));
+            });
         }, index * 300);
     });
     
