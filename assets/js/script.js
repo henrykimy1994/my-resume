@@ -1,5 +1,13 @@
+import { toKoreanDate, getDurationString, getDateDifferenceInYearsMonths } from "/assets/js/utils.js";
+
 // Wait for the DOM to load completely before executing code
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // Setup Work Experience Section Contents
+    await setupWorkExperienceContents();
+
+    //setup Education Section Contents
+    await setupEducationContents();
+
     // Initialize animations
     initializeScrollAnimations();
     
@@ -33,7 +41,113 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add parallax effects
     setupParallaxEffects();
+
+    // Disable all mouse interactions
+    const mouseEvents = ['click', 'contextmenu', 'mousedown', 'mouseup'];
+
+    mouseEvents.forEach(eventType => {
+        document.addEventListener(eventType, function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }, true);
+    });
 });
+
+async function setupWorkExperienceContents() {
+    const workExperienceSection = document.querySelector('#experience .section-content')
+    
+    try { 
+        const response = await fetch('/assets/data/data.json');
+
+        if (!response.ok) {
+            throw new Error();
+        }
+
+        const responseData = await response.json();
+        
+        if (responseData) {
+            const sortedData = responseData.workExperience.sort((a, b) => new Date(b.duration.end) - new Date(a.duration.end))
+            sortedData.forEach( item => {
+                const newElement = `
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title-company">
+                            <h4>${item.jobTitle || ''}</h4>
+                            <h5>${item.company || ''}</h5>
+                        </div>
+                        <div class="duration">
+                            <div class="job-duration">${getDurationString(item.duration.start, item.duration.end)}</div>
+                            <div class="job-duration">${getDateDifferenceInYearsMonths(item.duration.start, item.duration.end)}</div>
+                        </div>
+                    </div>
+                    <ul class="job-description">
+                        ${item.description.map(descItem => `<li>${descItem}</li>`).join('')}
+                    </ul>
+                    <div class="job-skills">
+                        ${item.skills.map(skillItem => `<span class="skill-tag">${skillItem}</span>`).join('')}
+                    </div>
+                </div>
+                `
+                workExperienceSection.insertAdjacentHTML('beforeend', newElement);
+            });
+        }
+    } catch(error) {
+        Swal.fire({
+            title: 'Error!',
+            html: `이력 데이터를 불러오는 과정에서<br/>오류가 발생했습니다.`,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+
+        log.error('Fetch error: ', error);
+    }
+}
+
+async function setupEducationContents() {
+    const educationSection = document.querySelector('#education .section-content')
+    
+    try { 
+        const response = await fetch('/assets/data/data.json');
+
+        if (!response.ok) {
+            throw new Error();
+        }
+
+        const responseData = await response.json();
+        
+        if (responseData) {
+            const sortedData = responseData.education.sort((a, b) => new Date(b.duration.end) - new Date(a.duration.end))
+            sortedData.forEach( item => {
+                const newElement = `
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="degree-institution">
+                            <h4>${item.degree || ''}</h4>
+                            <h5>${item.institution || ''}<span class="education-status">${item.status}</span></h5>
+                        </div>
+                        <div class="education-duration">${getDurationString(item.duration.start, item.duration.end)}</div>
+                    </div>
+                    ${item.achievements.map(schievementItem => `<p>${schievementItem}</p>`).join('')}
+                    <div class="job-skills">
+                        ${item.skills.map(skillItem => `<span class="skill-tag">${skillItem}</span>`).join('')}
+                    </div>
+                </div>
+                `
+                educationSection.insertAdjacentHTML('beforeend',newElement);
+            });
+        }
+    } catch(error) {
+        Swal.fire({
+            title: 'Error!',
+            html: `학력 데이터를 불러오는 과정에서<br/>오류가 발생했습니다.`,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+
+        log.error('Fetch error: ', error);
+    }
+}
 
 /**
  * Sets up scroll-based animations for sections

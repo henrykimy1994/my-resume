@@ -27,6 +27,7 @@ body {
     line-height: 1.6;
     font-size: 16px;
     overflow-x: hidden;
+    user-select: none;
 }
 
 .container {
@@ -295,6 +296,20 @@ main {
     flex-wrap: wrap;
 }
 
+.education-header .education-status {
+    border-radius: 10px;
+    background-color: rgba(59, 130, 246, 0.1);
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.duration {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+}
+
 .job-title-company h4, .degree-institution h4 {
     font-size: 1.4rem;
     color: var(--primary-color);
@@ -513,6 +528,12 @@ main {
     border-top: 5px solid var(--secondary-color);
 }
 
+.project-item .company-name-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .project-item.animate-item {
     opacity: 1;
     transform: translateY(0);
@@ -526,10 +547,14 @@ main {
 .project-item h4 {
     font-size: 1.3rem;
     color: var(--primary-color);
-    margin-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.project-item .company-name-header .job-duration {
+    padding: 4px 15px;
+    margin-top: 0;
 }
 
 .project-item h4::before {
@@ -831,12 +856,24 @@ footer {
         width: 120px;
         height: 120px;
     }
-    
+
+    .company-name-header {
+        flex-direction: column;
+    }
+
+    .company-name-header .duration .job-duration {
+        margin: 0 auto;
+    }
+
     .job-title-company h4, .degree-institution h4 {
         font-size: 1.2rem;
     }
     
     .experience-header, .education-header {
+        flex-direction: column;
+    }
+
+    .duration {
         flex-direction: column;
     }
     

@@ -1,0 +1,164 @@
+{
+  "workExperience": [
+    {
+      "jobTitle": "홈페이지, 모바일웹(웹, 앱) 운영",
+      "company": "현대차증권",
+      "duration": {
+        "start": "2024-03",
+        "end": "2025-06"
+      },
+      "description": [
+        "레거시 아키텍쳐 기반 홈페이지 리테일, 퇴직연금, IRP연금몰 개발/운영",
+        "스프링, Vue3 하이브리드 앱, 모바일웹 리테일, 퇴직연금, IRP 개발/운영"
+      ],
+      "skills": [
+        "Vue3",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Java",
+        "Spring",
+        "JSP",
+        "JQuery",
+        "AJAX",
+        "Oracle SQL",
+        "VSCode",
+        "IntelliJ",
+        "Eclipse",
+        "SecureCert",
+        "Shell",
+        "FileZilla",
+        "SVN"
+      ]
+    },
+    {
+      "jobTitle": "운영지원",
+      "company": "Citi은행",
+      "duration": {
+        "start": "2023-04",
+        "end": "2023-08"
+      },
+      "description": [
+        "로그 집계 도구를 활용한 시스템 오류 모니터링 및 시스템 성능 감시 및 이해관계자 대상 상황 업데이트 제공",
+        "오류 발생시 서버 로그, 애플리케이션 로그 분석을 통한 근본 원인 파악",
+        "타 부서로부터 접수된 오류 신고 이메일 대응 및 인시던트 관리",
+        "인시던트 보고서 작성 및 개발팀과의 협업을 통한 운영 반영 지원"
+      ],
+      "skills": [
+        "Shell/Linux",
+        "Oracle SQL",
+        "SecureCert"
+      ]
+    },
+    {
+      "jobTitle": "경영지원포털 시스템 개발",
+      "company": "현대제철",
+      "duration": {
+        "start": "2022-02",
+        "end": "2023-02"
+      },
+      "description": [
+        "SAP 개발자와 소통을 통해서 exBuilder6 프레임워크를 활용해서 평가, 인사, 총무 화면 개발",
+        "평가, 인사, 총무 업무 신청, 조회, 취소, 수정 화면 개발",
+        "RD Report 개발자와 소통을 통해서 RD Report 연결 및 화면에서 확인할 수 있는 화면 개발"
+      ],
+      "skills": [
+        "eXBuilder6",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Java",
+        "Spring",
+        "Eclipse"
+      ]
+    },
+    {
+      "jobTitle": "문화포털 고도화 개발",
+      "company": "문화정보원",
+      "duration": {
+        "start": "2021-05",
+        "end": "2022-01"
+      },
+      "description": [
+        "문화공감 3개 메뉴 및 문화체험 1개 메뉴의 화면 개발 및 그래프를 활용한 정보 API 화면 구현",
+        "게시판 형태의 신청·조회·수정·삭제 기능을 포함한 화면 개발"
+      ],
+      "skills": [
+        "Thymeleaf",
+        "JSP",
+        "Java",
+        "Spring",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "JQuery",
+        "AJAX",
+        "OracleSQL",
+        "IntelliJ",
+        "Eclipse"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "머신러닝기반 SW개발자",
+      "institution": "경영기술개발원 교육센터",
+      "duration": {
+        "start": "2020-09",
+        "end": "2021-03"
+      },
+      "status": "수료",
+      "achievements": [],
+      "skills": [
+        "JSP",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "AJAX",
+        "JQuery",
+        "Python",
+        "R",
+        "Django",
+        "OracleSQL",
+        "MySQL",
+        "Eclipse",
+        "IntelliJ",
+        "PyCharm",
+        "SQL Developer",
+        "MySQL Workbench"
+      ]
+    },
+    {
+      "degree": "신학순결학",
+      "institution": "선문대학교",
+      "duration": {
+        "start": "2014-03",
+        "end": "2018-02"
+      },
+      "status": "졸업",
+      "achievements": [
+        "공로상 수여",
+        "2016 신학순결학과 학생회 회장",
+        "2015 신학순결학과 학생회 기획팀 부장",
+        "2014 신학순결학과 학생회 기획팀 팀원",
+        "2014 - 2017 채플 피아노 반주자"
+      ],
+      "skills": []
+    },
+    {
+      "degree": "생물학",
+      "institution": "하와이 주립 대학교 마노아",
+      "duration": {
+        "start": "2012-08",
+        "end": "2013-12"
+      },
+      "status": "자퇴",
+      "achievements": [
+        "등록금 장학생 선발",
+        "우등생 프로그램(Honors Program) 선발",
+        "하와이 학부생 이니셔티브 프로그램(HUI Program) 선발"
+      ],
+      "skills": []
+    }
+  ]
+}
